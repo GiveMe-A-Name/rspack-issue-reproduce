@@ -1,0 +1,19 @@
+{
+  "name": "rspack-react-starter",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "NODE_ENV=development rspack serve",
+    "build": "rspack build"
+  },
+  "dependencies": {
+    "framer-motion": "^10.9.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@rspack/cli": "0.1.3",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.8"
+  }
+}
