@@ -13,14 +13,14 @@ function App1() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Rspack + React Test App1212</h1>
+      <h1>Rspack + React Test App12345</h1>
       <p className="read-the-docs">
         Click on the Rspack and React logos to learn more
       </p>
     </div>
   );
 }
-
+console.log('11111');
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <App />
