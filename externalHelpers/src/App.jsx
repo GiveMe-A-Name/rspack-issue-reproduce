@@ -2,6 +2,9 @@ import React from "react";
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
+import A from './test';
+
+console.log('A', A);
 
 function App() {
 	const [count, setCount] = useState(0);

@@ -15,6 +15,7 @@
   "devDependencies": {
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.8",
-    "@rspack/cli": "latest"
+    "@rspack/cli": "0.3.4-canary-c2b97a1-20230915142753",
+    "@rspack/dev-client": "0.3.4-canary-c2b97a1-20230915142753"
   }
 }
