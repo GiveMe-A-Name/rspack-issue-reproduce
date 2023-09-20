@@ -73,7 +73,12 @@ module.exports = {
             test: /\.s[ac]ss$/i,
             oneOf: [
               {
-                sideEffects: true,
+				test: /\.module\.\w+$/i,
+                exclude: [/index\.scss$/],
+                use: [{ loader: "sass-loader" }],
+                type: "css/module",
+              },
+			  {
                 exclude: [/index\.scss$/],
                 use: [{ loader: "sass-loader" }],
                 type: "css",
