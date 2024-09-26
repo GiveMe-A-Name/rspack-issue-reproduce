@@ -1,0 +1,27 @@
+{
+  "name": "rspack-loader-deps",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev:webpack": "webpack --watch -c ./rspack.config.mjs",
+    "dev": "cross-env NODE_ENV=development rspack serve",
+    "build": "cross-env NODE_ENV=production rspack build"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "@rspack/cli": "1.0.7",
+    "@rspack/core": "1.0.7",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^5"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "allowAny": [
+        "@rspack/*",
+        "@rspack/*",
+        "@rspack/*"
+      ]
+    }
+  }
+}

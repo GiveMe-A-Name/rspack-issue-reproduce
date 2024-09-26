@@ -5,18 +5,25 @@
   "private": true,
   "main": "index.js",
   "scripts": {
+    "dev:webpack": "webpack serve -c ./rspack.config.js",
     "dev": "rm -rf dist && rspack serve",
     "build": "rspack build"
   },
   "dependencies": {
+    "@rsdoctor/rspack-plugin": "^0.4.4",
+    "@rsdoctor/webpack-plugin": "^0.4.4",
+    "css-loader": "^7.1.2",
     "unplugin-auto-import": "^0.16.7",
     "vue": "3.2.45"
   },
   "devDependencies": {
+    "@rspack/cli": "^1.0.0",
+    "@rspack/core": "^1.0.0",
     "html-webpack-plugin": "npm:html-rspack-plugin@5.5.7",
-    "@rspack/cli": "0.3.14",
-    "@rspack/core": "0.3.14",
-    "vue-loader": "^17.2.2"
+    "vue-loader": "^17.2.2",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^5"
   },
   "keywords": [],
   "author": "",

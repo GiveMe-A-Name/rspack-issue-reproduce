@@ -1,34 +1,35 @@
-const rspack = require("@rspack/core");
 const { VueLoaderPlugin } = require("vue-loader");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-const AutoImport = require("unplugin-auto-import/rspack");
-
 /** @type {import('@rspack/cli').Configuration} */
 const config = {
+  mode: "development",
   context: __dirname,
   entry: {
     main: "./src/main.js",
   },
+  stats: false,
   plugins: [
-    AutoImport({
-      imports: ["vue"],
-    }),
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       template: "./index.html",
     }),
-    // new rspack.HtmlRspackPlugin({
-    //   template: "./index.html",
-    // }),
   ],
   devServer: {
+    open: true,
     devMiddleware: {
       writeToDisk: true,
     },
   },
+  experiments: {
+    css: true,
+  },
   module: {
     rules: [
+      // {
+      //   test: /\.js$/,
+      //   loader: "./loader.js",
+      // },
       {
         test: /\.vue$/,
         loader: "vue-loader",

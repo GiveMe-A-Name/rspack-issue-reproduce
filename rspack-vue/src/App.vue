@@ -1,7 +1,6 @@
 <script setup>
 import HelloWorld from "./components/HelloWorld.vue";
 
-const title = ref("Rspack + Vue");
 </script>
 
 <template>
@@ -12,8 +11,9 @@ const title = ref("Rspack + Vue");
     <a href="https://vuejs.org/" target="_blank">
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
+    <div>aaaa</div>
   </div>
-  <HelloWorld :msg="title" />
+  <HelloWorld msg="Rspack + Vue" />
 </template>
 
 <style scoped>
