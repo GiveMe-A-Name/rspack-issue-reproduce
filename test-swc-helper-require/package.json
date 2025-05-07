@@ -2,11 +2,12 @@
   "name": "test-swc-helper-require",
   "private": true,
   "version": "1.0.0",
-  "type":"commonjs",
+  "type": "commonjs",
   "scripts": {
     "dev": "rm -rf dist/ && rspack dev",
     "test": "rm -rf dist/ && rspack build && node ./dist/main.js",
     "test:node": "node ./src/index.js",
+    "test:webpack": "rm -rf dist/ && webpack build -c rspack.config.mjs && node ./dist/main.js",
     "build": "rspack build",
     "preview": "rspack preview"
   },
@@ -16,6 +17,8 @@
   },
   "packageManager": "pnpm@8.14.1+sha512.856c4ecd97c5d3f30354ebc373cd32fb37274295c489db2d0f613a1e60f010cadfbb15036d525f3a06dec1897e4219b3c4f6d3be8f2f62fb0a366bee6aaa7533",
   "dependencies": {
-    "@swc/helpers": "^0.5.17"
+    "@swc/helpers": "^0.5.17",
+    "webpack": "^5.99.8",
+    "webpack-cli": "^6.0.1"
   }
 }

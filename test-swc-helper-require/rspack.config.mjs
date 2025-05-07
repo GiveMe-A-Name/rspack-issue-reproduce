@@ -8,32 +8,13 @@ export default defineConfig({
   entry: {
     main: "./src/index.js",
   },
+  mode: "development",
   devServer: {
     devMiddleware: {
       writeToDisk: true,
     },
   },
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        use: [
-          {
-            loader: "builtin:swc-loader",
-            options: {
-              jsc: {
-                parser: {
-                  syntax: "ecmascript",
-                },
-              },
-              env: { targets },
-            },
-          },
-        ],
-      },
-    ],
-  },
-  plugins: [new rspack.HtmlRspackPlugin({ template: "./index.html" })],
+  module: {},
   optimization: {
     minimize: false,
     moduleIds: "named",
