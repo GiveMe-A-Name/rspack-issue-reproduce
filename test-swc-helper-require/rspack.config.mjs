@@ -36,6 +36,7 @@ export default defineConfig({
   plugins: [new rspack.HtmlRspackPlugin({ template: "./index.html" })],
   optimization: {
     minimize: false,
+    moduleIds: "named",
   },
   experiments: {
     css: true,
