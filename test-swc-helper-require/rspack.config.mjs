@@ -5,48 +5,39 @@ import { rspack } from "@rspack/core";
 const targets = ["chrome >= 87", "edge >= 88", "firefox >= 78", "safari >= 14"];
 
 export default defineConfig({
-	entry: {
-		main: "./src/index.js"
-	},
-	devServer: {
-	  devMiddleware: {
-		writeToDisk: true
-	  }
-	},
-	module: {
-		rules: [
-			{
-				test: /\.svg$/,
-				type: "asset"
-			},
-			{
-				test: /\.js$/,
-				use: [
-					{
-						loader: "builtin:swc-loader",
-						options: {
-							jsc: {
-								parser: {
-									syntax: "ecmascript"
-								}
-							},
-							env: { targets }
-						}
-					}
-				]
-			}
-		]
-	},
-	plugins: [new rspack.HtmlRspackPlugin({ template: "./index.html" })],
-	optimization: {
-		minimizer: [
-			new rspack.SwcJsMinimizerRspackPlugin(),
-			new rspack.LightningCssMinimizerRspackPlugin({
-				minimizerOptions: { targets }
-			})
-		]
-	},
-	experiments: {
-		css: true
-	}
+  entry: {
+    main: "./src/index.js",
+  },
+  devServer: {
+    devMiddleware: {
+      writeToDisk: true,
+    },
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        use: [
+          {
+            loader: "builtin:swc-loader",
+            options: {
+              jsc: {
+                parser: {
+                  syntax: "ecmascript",
+                },
+              },
+              env: { targets },
+            },
+          },
+        ],
+      },
+    ],
+  },
+  plugins: [new rspack.HtmlRspackPlugin({ template: "./index.html" })],
+  optimization: {
+    minimize: false,
+  },
+  experiments: {
+    css: true,
+  },
 });
