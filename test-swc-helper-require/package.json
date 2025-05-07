@@ -4,7 +4,9 @@
   "version": "1.0.0",
   "type":"commonjs",
   "scripts": {
-    "dev": "rm -rf dist/ & rspack dev",
+    "dev": "rm -rf dist/ && rspack dev",
+    "test": "rm -rf dist/ && rspack build && node ./dist/main.js",
+    "test:node": "node ./src/index.js",
     "build": "rspack build",
     "preview": "rspack preview"
   },
